@@ -1,8 +1,16 @@
-const cep = require('cep-promise')
+const cepPromise = require('cep-promise')
 
 const myCep = async (resolve) => {
-  const response = await cep(resolve)
-  console.log(response)
+  const response = await cepPromise(resolve)
+  const { cep, state, city, neighborhood, street } = response
+  const data =  {
+    cep,
+    state,
+    city,
+    neighborhood,
+    street
+  }
+  return data
 }
 
-module.exports = myCep()
+module.exports = myCep

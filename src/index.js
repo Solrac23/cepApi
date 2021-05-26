@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
+const myCep = require('./services/api')
 
 app.get('/', (req, res) => {
-  res.json({ message: 'Hello World' })
+  
+  res.send()
 })
 
 app.listen(3000, () => {
